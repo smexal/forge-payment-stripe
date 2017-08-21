@@ -10,7 +10,10 @@ use \Forge\Core\Classes\Settings;
 use \Forge\Core\Classes\User;
 use \Forge\Core\Classes\Utils;
 
-
+/**
+ * Help the Translation Crawler
+ * i('stripe', 'forge-payment')
+ */
 
 class Adapter {
     public static $id = 'stripe';
