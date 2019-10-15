@@ -49,7 +49,7 @@ class Adapter {
         $charge = \Stripe\Charge::create(array(
             'customer' => $customer->id,
             'amount'   => $payment->getTotalAmount(true),
-            'currency' => 'chf'
+            'currency' => strtolower(Payment::getCurrency())
         ));
 
         App::instance()->addMessage(i('Your payment has been confirmed.', 'forge-payment'), "success");
@@ -77,7 +77,7 @@ class Adapter {
                     data-locale="auto"
                     data-zip-code="false"
                     data-label="'.i('Pay with Credit Card – by stripe', 'forge-payment-stripe').'"
-                    data-currency="chf">
+                    data-currency="'.strtolower(Payment::getCurrency()).'">
                 </script>
             </form>'
         );
